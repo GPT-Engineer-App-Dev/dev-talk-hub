@@ -1,13 +1,18 @@
 import { Box, Container, Flex, Heading, Text, VStack, Link, HStack, Divider } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { FaHome, FaLaptopCode, FaDatabase, FaCloud, FaMobileAlt } from "react-icons/fa";
 
 const NavBar = () => (
   <Flex as="nav" bg="brand.800" color="white" padding={4} justifyContent="space-between" alignItems="center">
     <Heading size="md">Tech Forum</Heading>
     <HStack spacing={4}>
-      <Link href="#home" display="flex" alignItems="center">
+      <Link as={RouterLink} to="/" display="flex" alignItems="center">
         <FaHome />
         <Text ml={2}>Home</Text>
+      </Link>
+      <Link as={RouterLink} to="/create-post" display="flex" alignItems="center">
+        <FaLaptopCode />
+        <Text ml={2}>Create Post</Text>
       </Link>
       <Link href="#web-dev" display="flex" alignItems="center">
         <FaLaptopCode />
